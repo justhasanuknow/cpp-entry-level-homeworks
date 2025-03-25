@@ -35,8 +35,15 @@ int main() {
     std::cin >> option;
     std::cout << "\n";
 
-    if (option == 4)
+    if (std::cin.fail()) {
+      std::cout << "Invalid input! Not a number." << std::endl;
       break;
+    }
+
+    if (option == 4) {
+      exit_program();
+      break;
+    }
 
     switch (option) {
     // Create account.
@@ -61,7 +68,6 @@ int main() {
     }
   }
 
-  exit_program();
   return 0;
 }
 
